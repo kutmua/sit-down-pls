@@ -145,9 +145,26 @@ const imgMinify = () => {
       progressive: true,
       svgoPlugins: [{removeViewBox: false}],
       interlaced: true,
-      optimizationLevel: 4 // от 0 до 7
+      optimizationLevel: 2 // от 0 до 7
     }))
     .pipe(webp())
+    .pipe(gulp.dest('dist/img/'))
+    .pipe(browser.stream())
+}
+
+const imgNoMinify = () => {
+  return gulp.src([
+    'src/img/no-minify/**/*.jpg',
+    'src/img/no-minify/**/*.png',
+    'src/img/no-minify/**/*.jpeg',
+    'src/img/no-minify/**/*.webp',
+  ])
+    .pipe(imageMin({
+      progressive: true,
+      svgoPlugins: [{removeViewBox: false}],
+      interlaced: true,
+      optimizationLevel: 2 // от 0 до 7
+    }))
     .pipe(gulp.dest('dist/img/'))
     .pipe(browser.stream())
 }
@@ -201,6 +218,7 @@ function watchFiles() {
     'src/img/*.jpeg',
     'src/img/*.webp',
   ], imgMinify);
+  gulp.watch('src/img/no-minify/**/*.*', imgNoMinify);
   gulp.watch('src/img/**/*.svg', svgTransfer);
   gulp.watch('src/img/favicons/**/*.*', faviconsTransfer);
   gulp.watch('src/fonts/**/*.*', fontsTransfer);
@@ -215,6 +233,7 @@ const mainTasks = gulp.series(
     mainCss,
     othersCss,
     imgMinify,
+    imgNoMinify,
     svgTransfer,
     faviconsTransfer,
     fontsTransfer

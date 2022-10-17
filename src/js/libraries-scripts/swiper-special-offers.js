@@ -4,11 +4,6 @@ document.addEventListener('DOMContentLoaded', function(){
     direction: 'horizontal',
     // loop: true,
 
-    // If we need pagination
-    pagination: {
-      el: '.hero__swiper-pagination',
-    },
-
     // Navigation arrows
     navigation: {
       nextEl: '.special-offers__swiper-btn-next',

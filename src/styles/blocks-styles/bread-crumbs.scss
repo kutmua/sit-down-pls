@@ -1,0 +1,35 @@
+/* ------------------------------ */
+/* bread-crumbs */
+.bread-crumbs__container{
+  padding-top: 23px;
+  padding-bottom: 32px;
+  .bread-crumbs__list {
+    align-items: center;
+    .bread-crumbs__list-item {
+      position: relative;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 100%;
+      color: $grey_color;
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+      &:not(:last-child)::after {
+        content: '/';
+        position: absolute;
+        display: flex;
+        align-items: flex-end;
+        width: auto;
+        height: 100%;
+        top: 0;
+        right: -12px;
+      }
+    }
+  }
+}
+.bread-crumbs__item-link {
+  &_active {
+    color: $primary_color_shade;
+  }
+}

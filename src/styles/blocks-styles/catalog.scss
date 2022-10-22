@@ -1,0 +1,124 @@
+/* ------------------------------ */
+/* catalog */
+.catalog {
+  padding: 0 134px;
+}
+.catalog__container {
+  grid-template-columns: minmax(200px, 296px) 1fr;
+  grid-template-rows: 1fr;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 1fr;
+  gap: 0 32px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "filters katalog";
+
+  .catalog__filters {
+    grid-area: filters;
+    .catalog__filters-titile {
+      margin-bottom: 20px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 130%;
+      color: $black;
+    }
+  }
+  .filters-container-desctop {
+    flex-direction: column;
+    .filters-checkbox-list {
+      flex-direction: column;
+      &:not(:last-child) {
+        margin-bottom: 26px;
+      }
+      .filters-checkbox-list__item {
+        &:not(:last-child) {
+          margin-bottom: 12px;
+        }
+      }
+    }
+    .filters-price {
+      margin-bottom: 10px;
+      width: 100%;
+      justify-content: space-between;
+      .filters-price__label {
+        align-items: center;
+        span {
+          margin-right: 9px;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 130%;
+          color: $grey_color_shade;
+        }
+      }
+      .filters-price__input {
+        padding: 4px 13px;
+        max-width: 86px;
+        width: 100%;
+        height: 30px;
+        border: 1px solid $grey_color;
+        border-radius: 2px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+        color: $grey_color_shade;
+        transition: border-color .2s linear, background-color .2s linear;
+        &:hover {
+          border-color: $primary_color;
+        }
+        &:focus-visible:not(:active) {
+          border-color: $primary_color;
+          background-color: $pink_color_violet;
+        }
+        &:active {
+          border-color: $primary_color_shade;
+        }
+      }
+    }
+    .price-range {
+      margin-bottom: 26px;
+      width: 100%;
+      height: 3px;
+      background-color: $grey_color_medium;
+      border-radius: 3px;
+      .price-range__control {
+        position: relative;
+        width: 70%;
+        height: 100%;
+        background-color: $primary_color;
+        border-radius: 3px;
+        transform: translateX(20px);
+        cursor: pointer;
+        .price-range__control-btn {
+          position: absolute;
+          display: flex;
+          top: 0;
+          width: 13px;
+          height: 13px;
+          svg {
+            width: inherit;
+            height: inherit;
+            & path {
+              transition: fill .2s linear;
+            }
+          }
+        }
+        .control-btn-before {
+          left: -6px;
+        }
+        .control-btn-after {
+          right: -6px;
+        }
+      }
+    }
+  }
+  .filters-container-tablet {
+    display: none;
+  }
+  .catalog__cards {
+    grid-area: katalog;
+  }
+
+}

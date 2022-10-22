@@ -1,0 +1,27 @@
+/* ------------------------------ */
+/* banner */
+.banner {
+  padding: 150px 0;
+  background-image: url(../img/banner-bg.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .banner__title {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 60px;
+    line-height: 120%;
+    color: $gold_color;
+  }
+  .banner__descr {
+    margin-bottom: 49px;
+    max-width: 500px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 120%;
+    color: $white_color;
+  }
+}

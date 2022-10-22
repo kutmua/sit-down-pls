@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('../html/head.html',{
+    "title":"Каталог. Мебельный магазин SitDownPls."
+  })
+<body>
+  @@include('../html/header.html',{})
+  @@include('../html/bread-crumbs.html',{})
+
+  <section class="section catalog">
+    <div class="container catalog__container grid">
+      <div class="catalog__filters">
+        <h3 class="catalog__filters-titile">
+          Фильтровать&nbsp;по:
+        </h3>
+
+        <div class="filters-container filters-container-desctop flex">
+          <strong class="property-name">
+            Категория
+          </strong>
+          <ul class="filters-checkbox-list checkbox-list flex">
+            <li class="filters-checkbox-list__item">
+              <label class="filters-check check flex">
+                <input class="filters-check__input check__input" type="checkbox" checked>
+                <span class="filters-check__box check__box"></span>
+                <span class="filters-check__text check__text">
+                  Диваны
+                </span>
+              </label>
+            </li>
+
+            <li class="filters-checkbox-list__item">
+              <label class="filters-check check flex">
+                <input class="filters-check__input check__input" type="checkbox">
+                <span class="filters-check__box check__box"></span>
+                <span class="filters-check__text check__text">
+                  Кресла
+                </span>
+              </label>
+            </li>
+
+            <li class="filters-checkbox-list__item">
+              <label class="filters-check check flex">
+                <input class="filters-check__input check__input" type="checkbox">
+                <span class="filters-check__box check__box"></span>
+                <span class="filters-check__text check__text">
+                  Пуфы
+                </span>
+              </label>
+            </li>
+
+            <li class="filters-checkbox-list__item">
+              <label class="filters-check check flex">
+                <input class="filters-check__input check__input" type="checkbox">
+                <span class="filters-check__box check__box"></span>
+                <span class="filters-check__text check__text">
+                  Кровати
+                </span>
+              </label>
+            </li>
+
+            <li class="filters-checkbox-list__item">
+              <label class="filters-check check flex">
+                <input class="filters-check__input check__input" type="checkbox">
+                <span class="filters-check__box check__box"></span>
+                <span class="filters-check__text check__text">
+                  Тумбы
+                </span>
+              </label>
+            </li>
+
+            <li class="filters-checkbox-list__item">
+              <label class="filters-check check flex">
+                <input class="filters-check__input check__input" type="checkbox">
+                <span class="filters-check__box check__box"></span>
+                <span class="filters-check__text check__text">
+                  Комоды
+                </span>
+              </label>
+            </li>
+
+            <li class="filters-checkbox-list__item">
+              <label class="filters-check check flex">
+                <input class="filters-check__input check__input" type="checkbox">
+                <span class="filters-check__box check__box"></span>
+                <span class="filters-check__text check__text">
+                  Стулья
+                </span>
+              </label>
+            </li>
+
+            <li class="filters-checkbox-list__item">
+              <label class="filters-check check flex">
+                <input class="filters-check__input check__input" type="checkbox">
+                <span class="filters-check__box check__box"></span>
+                <span class="filters-check__text check__text">
+                  Столы
+                </span>
+              </label>
+            </li>
+
+            <li class="filters-checkbox-list__item">
+              <label class="filters-check check flex">
+                <input class="filters-check__input check__input" type="checkbox">
+                <span class="filters-check__box check__box"></span>
+                <span class="filters-check__text check__text">
+                  Аксессуары
+                </span>
+              </label>
+            </li>
+
+          </ul>
+
+          <strong class="property-name">
+            Цена
+          </strong>
+          <div class="filters-price flex">
+            <label class="filters-price__label flex">
+              <span>
+                от
+              </span>
+              <input class="filters-price__input" type="number" placeholder="2000">
+            </label>
+
+            <label class="filters-price__label flex">
+              <span>
+                до
+              </span>
+              <input class="filters-price__input" type="number" placeholder="150 000">
+            </label>
+          </div>
+          <div class="filters-price-range price-range flex">
+            <span class="price-range__control flex">
+              <button class="price-range__control-btn control-btn-before btn">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1.0197 13C0.25466 13 -0.23717 12.1878 0.117236 11.5096L5.84671 0.546693C6.23552 -0.197262 7.30668 -0.177781 7.66819 0.579819L12.8994 11.5428C13.222 12.2187 12.7293 13 11.9804 13L1.0197 13Z" fill="#A65CF0"/>
+                </svg>
+              </button>
+
+              <button class="price-range__control-btn control-btn-after btn">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1.0197 13C0.25466 13 -0.23717 12.1878 0.117236 11.5096L5.84671 0.546693C6.23552 -0.197262 7.30668 -0.177781 7.66819 0.579819L12.8994 11.5428C13.222 12.2187 12.7293 13 11.9804 13L1.0197 13Z" fill="#A65CF0"/>
+                </svg>
+              </button>
+            </span>
+          </div>
+        </div>
+
+        <div class="filters-container filters-container-tablet flex">
+
+        </div>
+      </div>
+
+      <div class="catalog__cards">
+        <h3 class="title-small catalog__cards-title">
+          Каталог
+        </h3>
+      </div>
+    </div>
+  </section>
+
+  @@include('../html/footer.html',{})
+
+  @@include('../html/scripts.html',{})
+</body>
+</html>

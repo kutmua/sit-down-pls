@@ -47,7 +47,10 @@ function reset() {
 
   /* HTML */
 const htmlMinify = () => {
-  return gulp.src('src/*.html')
+  return gulp.src([
+    'src/*.html',
+    'src/pages/**/*.html'
+  ])
     .pipe(fileInclude())
     .pipe(
       versionNumber({
@@ -73,7 +76,7 @@ const htmlMinify = () => {
 }
 
   /* SCSS */
-const mainCss = () => {
+const cssMinify = () => {
   return gulp.src('src/styles/main-styles/**/*.scss')
     .pipe(gulpIf(!isProd, sourcemaps.init()))
     .pipe(sass({
@@ -93,7 +96,7 @@ const mainCss = () => {
     .pipe(browser.stream())
 }
 
-const othersCss = () => {
+const cssLibraries = () => {
   return gulp.src('src/styles/libraries-styles/**/*.css')
     .pipe(gulpIf(!isProd, sourcemaps.init()))
     .pipe(autoprefixer({
@@ -124,13 +127,25 @@ const jsMinify = () => {
     .pipe(browser.stream())
 }
 
-const othersJs = () => {
+const jsLibraries = () => {
   return gulp.src('src/js/libraries-scripts/**/*.js')
     .pipe(gulpIf(!isProd, sourcemaps.init()))
     .pipe(gulpIf(isProd, terser()))
     .pipe(gulpIf(!isProd, sourcemaps.write()))
     .pipe(gulp.dest('dist/js/'))
     .pipe(browser.stream())
+}
+
+const jsBlocks = () => {
+  return gulp.src('src/js/blocks-scripts/**/*.js')
+  .pipe(gulpIf(!isProd, sourcemaps.init()))
+  .pipe(gulpIf(isProd, terser()))
+  .pipe(rename({
+    extname: '.min.js'
+  }))
+  .pipe(gulpIf(!isProd, sourcemaps.write()))
+  .pipe(gulp.dest('dist/js/'))
+  .pipe(browser.stream())
 }
 
   /* IMGS, SVG */
@@ -208,10 +223,14 @@ const serverInit = () => {
   /* WATCH FILES */
 function watchFiles() {
   gulp.watch('src/**/*.html', htmlMinify);
-  gulp.watch('src/styles/main-styles/**/*.scss', mainCss);
-  gulp.watch('src/styles/libraries-styles/**/*.css', othersCss);
+  gulp.watch([
+    'src/styles/main-styles/**/*.scss',
+    'src/styles/blocks-styles/**/*.scss',
+  ], cssMinify);
+  gulp.watch('src/styles/libraries-styles/**/*.css', cssLibraries);
   gulp.watch('src/js/*.js', jsMinify);
-  gulp.watch('src/js/libraries-scripts/**/*.js', othersJs);
+  gulp.watch('src/js/libraries-scripts/**/*.js', jsLibraries);
+  gulp.watch('src/js/blocks-scripts/**/*.js', jsBlocks);
   gulp.watch([
     'src/img/*.jpg',
     'src/img/*.png',
@@ -229,9 +248,10 @@ const mainTasks = gulp.series(
   gulp.parallel (
     htmlMinify,
     jsMinify,
-    othersJs,
-    mainCss,
-    othersCss,
+    jsLibraries,
+    jsBlocks,
+    cssMinify,
+    cssLibraries,
     imgMinify,
     imgNoMinify,
     svgTransfer,

@@ -1,0 +1,146 @@
+/* ------------------------------ */
+/* special-offers */
+.special-offers {
+  padding: 70px 0 0 0;
+  .special-offers__container {
+    position: relative;
+  }
+  .special-offers__swiper {
+    position: relative;
+    overflow: hidden;
+    .special-offers__swiper-slide {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: minmax(511px, 1fr);
+      gap: 0 32px;
+      .special-offers__card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background: $grey_color_light;
+        border-radius: 10px;
+        .special-offers__discount {
+          position: absolute;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          top: 30px;
+          left: 0;
+          max-width: 92px;
+          width: 100%;
+          height: 34px;
+          background-image: url("data:image/svg+xml,%3Csvg width='92' height='34' viewBox='0 0 92 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0H82.1075L92 16.2273L82.1075 34H0V0Z' fill='%23FF862F'/%3E%3C/svg%3E ");
+          font-style: normal;
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 19px;
+          text-align: center;
+          color: $white_color;
+        }
+        img {
+          margin-top: auto;
+          margin-bottom: 16px;
+          align-self: center;
+          width: fit-content;
+          height: fit-content;
+        }
+        .special-offers__card-descr-container {
+          padding: 0 30px 30px 30px;
+          flex-direction: column;
+          align-items: flex-start;
+          width: 100%;
+          .special-offers__product-name,
+          .special-offers__product-type {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 130%;
+            color: $black;
+          }
+          .special-offers__product-type,
+          .special-offers__prices {
+            margin-bottom: 22px;
+          }
+          .special-offers__prices {
+            align-items: center;
+          }
+          .special-offers__new-price {
+            margin-right: 30px;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 130%;
+            color: $secondary_color;
+          }
+          .special-offers__old-price {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 130%;
+            text-decoration-line: line-through;
+            color: $grey_color;
+          }
+        }
+      }
+      .special-offers__card-big {
+        grid-column: 2/4;
+      }
+    }
+  }
+  .special-offers__swiper-btns {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    max-width: 77px;
+    width: 100%;
+    .special-offers__swiper-btn {
+      width: 32px;
+      height: 32px;
+      svg {
+        width: inherit;
+        height: inherit;
+      }
+      svg path {
+        transition: stroke .2s linear;
+      }
+      svg circle {
+        transition: fill .2s linear;
+      }
+      &:hover svg path {
+        stroke: $white_color;
+      }
+      &:hover svg circle {
+        fill: $primary_color;
+      }
+      &:focus-visible svg path {
+        stroke: $white_color;
+      }
+      &:focus-visible svg circle {
+        fill: $primary_color_light;
+        stroke: $primary_color;
+      }
+      &:active svg path {
+        stroke: $white_color;
+      }
+      &:active svg circle {
+        fill: $primary_color_shade;
+        stroke: $primary_color_shade;
+      }
+      &.swiper-button-disabled {
+        cursor: not-allowed;
+        svg path,
+        svg circle {
+          stroke: $grey_color;
+        }
+        &:hover svg path {
+          stroke: $grey_color;
+        }
+        &:hover svg circle {
+          fill: transparent;
+        }
+      }
+    }
+    .special-offers__swiper-btn-prev {
+      margin-right: 13px;
+    }
+  }
+}

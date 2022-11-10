@@ -221,3 +221,8 @@
     border-color: $primary_color_shade;
   }
 }
+.catalog-card__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

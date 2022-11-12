@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function(){
   const swiperSmall = new Swiper(".swiper-small", {
-    spaceBetween: 10,
+    spaceBetween: 38,
     slidesPerView: 4,
     freeMode: true,
     watchSlidesProgress: true,

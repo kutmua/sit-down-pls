@@ -86,61 +86,7 @@
       }
     }
   }
-  .special-offers__swiper-btns {
-    position: absolute;
-    top: 0;
-    right: 20px;
-    max-width: 77px;
-    width: 100%;
-    .special-offers__swiper-btn {
-      width: 32px;
-      height: 32px;
-      svg {
-        width: inherit;
-        height: inherit;
-      }
-      svg path {
-        transition: stroke .2s linear;
-      }
-      svg circle {
-        transition: fill .2s linear;
-      }
-      &:hover svg path {
-        stroke: $white_color;
-      }
-      &:hover svg circle {
-        fill: $primary_color;
-      }
-      &:focus-visible svg path {
-        stroke: $white_color;
-      }
-      &:focus-visible svg circle {
-        fill: $primary_color_light;
-        stroke: $primary_color;
-      }
-      &:active svg path {
-        stroke: $white_color;
-      }
-      &:active svg circle {
-        fill: $primary_color_shade;
-        stroke: $primary_color_shade;
-      }
-      &.swiper-button-disabled {
-        cursor: not-allowed;
-        svg path,
-        svg circle {
-          stroke: $grey_color;
-        }
-        &:hover svg path {
-          stroke: $grey_color;
-        }
-        &:hover svg circle {
-          fill: transparent;
-        }
-      }
-    }
-    .special-offers__swiper-btn-prev {
-      margin-right: 13px;
-    }
+  .special-offers__swiper-btn-prev {
+    margin-right: 13px;
   }
 }

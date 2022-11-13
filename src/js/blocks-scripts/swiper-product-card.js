@@ -1,14 +1,23 @@
 document.addEventListener('DOMContentLoaded', function(){
-  const swiperSmall = new Swiper(".swiper-small", {
+  const swiperSmallPreview = new Swiper(".swiper-small", {
     spaceBetween: 38,
     slidesPerView: 4,
     freeMode: true,
     watchSlidesProgress: true,
   });
-  const swiperBig = new Swiper(".swiper-big", {
+  const swiperBigPreview = new Swiper(".swiper-big", {
     spaceBetween: 10,
     thumbs: {
-      swiper: swiperSmall,
+      swiper: swiperSmallPreview,
+    },
+  });
+  const swiperSimilarProducts = new Swiper(".similar-products-swiper", {
+    spaceBetween: 32,
+    slidesPerView: 4,
+
+    navigation: {
+      nextEl: ".similar__swiper-btn-next",
+      prevEl: ".similar__swiper-btn-prev"
     },
   });
 })

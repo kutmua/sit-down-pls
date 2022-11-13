@@ -129,6 +129,7 @@
     margin-bottom: auto;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     max-width: 230px;
     width: 100%;
     .product-card__btn-buy {
@@ -139,11 +140,18 @@
       font-weight: 600;
     }
     .product-card__btn-basket {
+      width: max-content;
       font-style: normal;
       font-weight: 400;
       font-size: 16px;
       line-height: 130%;
       color: $primary_color;
+      &:hover {
+        color: $primary_color_light;
+      }
+      &:active {
+        color: $primary_color_shade;
+      }
     }
   }
   .characteristics__name {
@@ -185,4 +193,23 @@
   font-size: 14px;
   line-height: 25px;
   white-space: nowrap;
+}
+
+.similar {
+  padding: 0 0 70px 0;
+  .similar__container {
+    position: relative;
+  }
+  .similar__title {
+    margin-bottom: 24px;
+  }
+  .similar-products-swiper {
+    overflow: hidden;
+    .similar-products__card {
+      min-height: 420px;
+    }
+  }
+  .similar__swiper-btn-prev {
+    margin-right: 13px;
+  }
 }

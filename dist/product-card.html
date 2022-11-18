@@ -25,18 +25,18 @@
   <link rel="preload" href="fonts/PlayfairDisplay-Black.woff" as="font">
 
   <!-- choices -->
-  <link rel="stylesheet" href="styles/choices.min.css?_v=20221118155929">
+  <link rel="stylesheet" href="styles/choices.min.css?_v=20221118183531">
 
   <!-- swiper -->
-  <link rel="stylesheet" href="styles/swiper-bundle.min.css?_v=20221118155929">
+  <link rel="stylesheet" href="styles/swiper-bundle.min.css?_v=20221118183531">
 
   <!-- modal -->
-  <link rel="stylesheet" href="styles/graph-modal.min.css?_v=20221118155929">
+  <link rel="stylesheet" href="styles/graph-modal.min.css?_v=20221118183531">
 
   <!-- styles -->
-  <link rel="stylesheet" href="styles/normalize.min.css?_v=20221118155929">
-  <link rel="stylesheet" href="styles/style.min.css?_v=20221118155929">
-  <link rel="stylesheet" href="styles/media.min.css?_v=20221118155929">
+  <link rel="stylesheet" href="styles/normalize.min.css?_v=20221118183531">
+  <link rel="stylesheet" href="styles/style.min.css?_v=20221118183531">
+  <link rel="stylesheet" href="styles/media.min.css?_v=20221118183531">
   <title>Товар. Мебельный магазин SitDownPls.</title>
 </head>
 <body>
@@ -303,7 +303,7 @@
         <p class="product-card__price">28 490 руб</p>
 
         <div class="product-card__btns-container flex">
-          <button class="product-card__btn-buy btn primary-btn">Купить в один клик</button>
+          <button class="product-card__btn-buy btn primary-btn" data-graph-path="buyOneClick" data-graph-animation="fadeInUp">Купить в один клик</button>
           <button class="product-card__btn-basket btn another-links">+ Добавить в корзину</button>
         </div>
 
@@ -613,59 +613,112 @@
   </section>
 
   <div class="graph-modal">
+  <!-- modal swiper photo -->
+  <div class="modal-swiper-photo graph-modal__container" role="dialog" aria-modal="true" data-graph-target="modalSwiperPhoto">
+    <button class="btn-reset graph-modal__close js-modal-close" aria-label="Закрыть модальное окно">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M2.3812 0.397739L11.2581 9.03977C11.8029 9.57009 11.8029 10.4299 11.2581 10.9602L2.3812 19.6023C1.83647 20.1326 0.953281 20.1326 0.408549 19.6023C-0.136183 19.0719 -0.136183 18.2121 0.408549 17.6818L8.29914 10L0.40855 2.31819C-0.136182 1.78787 -0.136181 0.928057 0.408551 0.397739C0.953283 -0.13258 1.83647 -0.13258 2.3812 0.397739Z" fill="#999999"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6188 0.397739L8.74188 9.03977C8.19715 9.57009 8.19715 10.4299 8.74188 10.9602L17.6188 19.6023C18.1635 20.1326 19.0467 20.1326 19.5914 19.6023C20.1362 19.0719 20.1362 18.2121 19.5914 17.6818L11.7009 10L19.5914 2.31819C20.1362 1.78787 20.1362 0.928057 19.5914 0.397739C19.0467 -0.13258 18.1635 -0.13258 17.6188 0.397739Z" fill="#999999"/>
+      </svg>
+    </button>
 
-    <div class="modal-swiper-photo graph-modal__container" role="dialog" aria-modal="true" data-graph-target="modalSwiperPhoto">
-      <button class="btn-reset graph-modal__close js-modal-close" aria-label="Закрыть модальное окно">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M2.3812 0.397739L11.2581 9.03977C11.8029 9.57009 11.8029 10.4299 11.2581 10.9602L2.3812 19.6023C1.83647 20.1326 0.953281 20.1326 0.408549 19.6023C-0.136183 19.0719 -0.136183 18.2121 0.408549 17.6818L8.29914 10L0.40855 2.31819C-0.136182 1.78787 -0.136181 0.928057 0.408551 0.397739C0.953283 -0.13258 1.83647 -0.13258 2.3812 0.397739Z" fill="#999999"/>
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6188 0.397739L8.74188 9.03977C8.19715 9.57009 8.19715 10.4299 8.74188 10.9602L17.6188 19.6023C18.1635 20.1326 19.0467 20.1326 19.5914 19.6023C20.1362 19.0719 20.1362 18.2121 19.5914 17.6818L11.7009 10L19.5914 2.31819C20.1362 1.78787 20.1362 0.928057 19.5914 0.397739C19.0467 -0.13258 18.1635 -0.13258 17.6188 0.397739Z" fill="#999999"/>
-        </svg>
-      </button>
-
-      <div class="graph-modal__content">
-        <div class="modal-swiper modal-swiper-big">
-          <div class="swiper-wrapper">
-            <div class="modal-swiper-big__slide swiper-slide">
-              <img src="img/product-d31-2.png" alt="Фото товара">
-            </div>
-            <div class="modal-swiper-big__slide swiper-slide">
-              <img src="img/product-d31-3.png" alt="Фото товара">
-            </div>
-            <div class="modal-swiper-big__slide swiper-slide">
-              <img src="img/product-d31-4.png" alt="Фото товара">
-            </div>
-            <div class="modal-swiper-big__slide swiper-slide">
-              <img src="img/product-d31-5.png" alt="Фото товара">
-            </div>
-            <div class="modal-swiper-big__slide swiper-slide">
-              <img src="img/product-d31-1.png" alt="Фото товара">
-            </div>
+    <div class="graph-modal__content">
+      <div class="modal-swiper modal-swiper-big">
+        <div class="swiper-wrapper">
+          <div class="modal-swiper-big__slide swiper-slide">
+            <img src="img/product-d31-2.png" alt="Фото товара">
+          </div>
+          <div class="modal-swiper-big__slide swiper-slide">
+            <img src="img/product-d31-3.png" alt="Фото товара">
+          </div>
+          <div class="modal-swiper-big__slide swiper-slide">
+            <img src="img/product-d31-4.png" alt="Фото товара">
+          </div>
+          <div class="modal-swiper-big__slide swiper-slide">
+            <img src="img/product-d31-5.png" alt="Фото товара">
+          </div>
+          <div class="modal-swiper-big__slide swiper-slide">
+            <img src="img/product-d31-1.png" alt="Фото товара">
           </div>
         </div>
-
-        <div class="modal-swiper modal-swiper-small">
-          <div class="swiper-wrapper">
-            <div class="modal-swiper-small__slide swiper-slide">
-              <img src="img/product-d31-2.png" alt="Фото товара">
-            </div>
-            <div class="modal-swiper-small__slide swiper-slide">
-              <img src="img/product-d31-3.png" alt="Фото товара">
-            </div>
-            <div class="modal-swiper-small__slide swiper-slide">
-              <img src="img/product-d31-4.png" alt="Фото товара">
-            </div>
-            <div class="modal-swiper-small__slide swiper-slide">
-              <img src="img/product-d31-5.png" alt="Фото товара">
-            </div>
-            <div class="modal-swiper-small__slide swiper-slide">
-              <img src="img/product-d31-1.png" alt="Фото товара">
-            </div>
-          </div>
-        </div>
-
       </div>
+
+      <div class="modal-swiper modal-swiper-small">
+        <div class="swiper-wrapper">
+          <div class="modal-swiper-small__slide swiper-slide">
+            <img src="img/product-d31-2.png" alt="Фото товара">
+          </div>
+          <div class="modal-swiper-small__slide swiper-slide">
+            <img src="img/product-d31-3.png" alt="Фото товара">
+          </div>
+          <div class="modal-swiper-small__slide swiper-slide">
+            <img src="img/product-d31-4.png" alt="Фото товара">
+          </div>
+          <div class="modal-swiper-small__slide swiper-slide">
+            <img src="img/product-d31-5.png" alt="Фото товара">
+          </div>
+          <div class="modal-swiper-small__slide swiper-slide">
+            <img src="img/product-d31-1.png" alt="Фото товара">
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
+
+  <!-- modal buy -->
+  <div class="modal-buy graph-modal__container" role="dialog" aria-modal="true" data-graph-target="buyOneClick">
+    <button class="btn-reset graph-modal__close js-modal-close" aria-label="Закрыть модальное окно">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M2.3812 0.397739L11.2581 9.03977C11.8029 9.57009 11.8029 10.4299 11.2581 10.9602L2.3812 19.6023C1.83647 20.1326 0.953281 20.1326 0.408549 19.6023C-0.136183 19.0719 -0.136183 18.2121 0.408549 17.6818L8.29914 10L0.40855 2.31819C-0.136182 1.78787 -0.136181 0.928057 0.408551 0.397739C0.953283 -0.13258 1.83647 -0.13258 2.3812 0.397739Z" fill="#999999"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6188 0.397739L8.74188 9.03977C8.19715 9.57009 8.19715 10.4299 8.74188 10.9602L17.6188 19.6023C18.1635 20.1326 19.0467 20.1326 19.5914 19.6023C20.1362 19.0719 20.1362 18.2121 19.5914 17.6818L11.7009 10L19.5914 2.31819C20.1362 1.78787 20.1362 0.928057 19.5914 0.397739C19.0467 -0.13258 18.1635 -0.13258 17.6188 0.397739Z" fill="#999999"/>
+      </svg>
+    </button>
+
+    <div class="modal-buy__content graph-modal__content flex">
+      <h2 class="modal-buy__title title">Купить в один клик</h2>
+      <p class="modal-buy__descr">Чтобы оформить заказ — заполните формы ниже и наш менеджер свяжется с вами в течении часа.</p>
+
+      <form class="modal-buy__form sending-form flex" action="#">
+        <input class="modal-buy__input sending-form__input modal-buy__name" name="name" type="text" placeholder="Как вас зовут?">
+        <input class="modal-buy__input sending-form__input modal-buy__phone" name="phone" type="number" placeholder="Ваш телефон">
+
+        <button class="modal-buy__btn sending-form__btn btn primary-btn" data-graph-path="gratitudeModal" data-graph-animation="fadeInUp">
+          Отправить
+        </button>
+
+        <label class="modal-buy__agree sending-form__agree flex" for="modal-buy-checkbox">
+          <input class="modal-buy__checkbox sending-form__checkbox" id="modal-buy-checkbox" type="checkbox" required checked>
+          <span>
+            Принимаю
+            <a href="#">
+              пользовательское соглашение
+            </a>
+          </span>
+        </label>
+      </form>
+    </div>
+  </div>
+
+  <!-- modal gratitude -->
+  <div class="modal-gratitude graph-modal__container" role="dialog" aria-modal="true" data-graph-target="gratitudeModal">
+    <button class="btn-reset graph-modal__close js-modal-close" aria-label="Закрыть модальное окно">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M2.3812 0.397739L11.2581 9.03977C11.8029 9.57009 11.8029 10.4299 11.2581 10.9602L2.3812 19.6023C1.83647 20.1326 0.953281 20.1326 0.408549 19.6023C-0.136183 19.0719 -0.136183 18.2121 0.408549 17.6818L8.29914 10L0.40855 2.31819C-0.136182 1.78787 -0.136181 0.928057 0.408551 0.397739C0.953283 -0.13258 1.83647 -0.13258 2.3812 0.397739Z" fill="#999999"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6188 0.397739L8.74188 9.03977C8.19715 9.57009 8.19715 10.4299 8.74188 10.9602L17.6188 19.6023C18.1635 20.1326 19.0467 20.1326 19.5914 19.6023C20.1362 19.0719 20.1362 18.2121 19.5914 17.6818L11.7009 10L19.5914 2.31819C20.1362 1.78787 20.1362 0.928057 19.5914 0.397739C19.0467 -0.13258 18.1635 -0.13258 17.6188 0.397739Z" fill="#999999"/>
+      </svg>
+    </button>
+
+    <div class="modal-gratitude__content graph-modal__content flex">
+      <svg width="172" height="117" viewBox="0 0 172 117" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M27.3271 104.845C48.9686 104.845 53.0467 85.9472 53.0467 70.8167C55.6171 70.8167 75.9308 70.8167 85.1963 70.8167C135.595 70.8167 135.608 0 86.8037 0C73.5292 0 64.979 7.99229 62.69 10.7765C35.4593 10.7765 32.1495 24.907 32.1495 52.3443C32.1495 57.6375 32.1495 74.844 32.1495 77.4944C32.1495 83.9457 29.539 88.1311 22.5031 88.1311C16.4959 88.1311 13.6507 82.8485 11.2507 75.4352C10.0001 76.1023 1.21848 80.8196 0 81.5932C2.65717 88.9988 5.5024 104.845 27.3271 104.845ZM57.9238 41.5663C66.1686 41.5663 66.8694 53.8823 57.3403 53.8823C49.3077 53.8823 49.5167 41.5663 57.9238 41.5663ZM86.8054 78.4731C79.8369 78.4731 59.4766 76.9747 59.4766 76.9747V114.944L78.7664 115.217L83.5888 87.7511L144.673 86.6113L146.282 116.725L168.787 117C168.787 117 172 58.0175 172 46.1848C172 24.2368 162.112 11.8144 139.85 10.7765C134.273 10.5166 126.975 9.48315 122.168 9.23696C143.118 34.5543 126.449 78.4731 86.8054 78.4731ZM125.385 93.8681L126.991 116.178L139.85 116.453L138.243 93.8681H125.385ZM85.1963 115.494L98.0561 115.767L101.269 93.8681H90.0171L85.1963 115.494Z" fill="#FF862F"/>
+      </svg>
+
+      <h2 class="modal-gratitude__title title">Спасибо, мы вам перезвоним!</h2>
+
+    </div>
+  </div>
+</div>
 
   <footer class="footer">
   <div class="footer__top">
@@ -806,21 +859,21 @@
 </footer>
 
   <!-- choices -->
-<script src="js/choices.min.js?_v=20221118155929"></script>
-<script src="js/choices-header.min.js?_v=20221118155929"></script>
+<script src="js/choices.min.js?_v=20221118183531"></script>
+<script src="js/choices-header.min.js?_v=20221118183531"></script>
 
 <!-- swiper -->
-<script src="js/swiper-bundle.min.js?_v=20221118155929"></script>
-<script src="js/swiper-hero.min.js?_v=20221118155929"></script>
-<script src="js/swiper-special-offers.min.js?_v=20221118155929"></script>
-<script src="js/swiper-useful.min.js?_v=20221118155929"></script>
-<script src="js/swiper-catalog.min.js?_v=20221118155929"></script>
-<script src="js/swiper-product-card.min.js?_v=20221118155929"></script>
+<script src="js/swiper-bundle.min.js?_v=20221118183531"></script>
+<script src="js/swiper-hero.min.js?_v=20221118183531"></script>
+<script src="js/swiper-special-offers.min.js?_v=20221118183531"></script>
+<script src="js/swiper-useful.min.js?_v=20221118183531"></script>
+<script src="js/swiper-catalog.min.js?_v=20221118183531"></script>
+<script src="js/swiper-product-card.min.js?_v=20221118183531"></script>
 
 <!-- modal -->
-<script src="js/graph-modal.min.js?_v=20221118155929"></script>
+<script src="js/graph-modal.min.js?_v=20221118183531"></script>
 
 <!-- main script -->
-<script src="js/main.min.js?_v=20221118155929"></script>
+<script src="js/main.min.js?_v=20221118183531"></script>
 </body>
 </html>

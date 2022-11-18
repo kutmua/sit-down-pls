@@ -33,7 +33,6 @@ document.addEventListener('DOMContentLoaded', function(){
     slidesPerView: 'auto',
     freeMode: true,
     watchSlidesProgress: true,
-    // initialSlide: 5,
   });
   const swiperModalBig = new Swiper(".modal-swiper-big", {
     spaceBetween: 10,

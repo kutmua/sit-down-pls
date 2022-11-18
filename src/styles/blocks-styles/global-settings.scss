@@ -409,3 +409,43 @@ $bone_color:#FFF5D1;
     }
   }
 }
+
+.modal-swiper-photo.graph-modal__container {
+  padding: 0;
+  padding-top: 50px;
+  width: 1280px;
+}
+.graph-modal__close {
+  background-image: none;
+  z-index: 1;
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    background-color: $pink_color_violet;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+    transition: opacity .2s linear, visibility .2s linear;
+  }
+  &:hover svg path{
+    fill: $primary_color;
+  }
+  &:focus-visible::after {
+    opacity: 1;
+    visibility: visible;
+  }
+  &:focus-visible svg path {
+    fill: $primary_color_shade;
+  }
+  &:active svg path {
+    fill: $primary_color_shade;
+  }
+  svg path{
+    transition: fill .2s linear;
+  }
+}

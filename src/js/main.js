@@ -59,4 +59,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
   productCheck()
 
+  /* -------------------------- */
+  const modal = new GraphModal();
 });

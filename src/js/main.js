@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function(){
     })
   })
 
+  // TODO: переделать BreadCrumbs. Сделать автономным
   function productCheck() {
     let fileName = location.href.split("/").slice(-1);
     if (fileName[0] === productPage) {

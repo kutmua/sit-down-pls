@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function(){
+
+  // TODO: сделать нормальные эффекты для чекбоксов и инпута наглавном экране
   const checkBoxes = document.querySelectorAll('.check__input');
 
   checkBoxes.forEach(checkBox => {
@@ -10,6 +12,18 @@ document.addEventListener('DOMContentLoaded', function(){
       event.currentTarget.nextElementSibling.nextElementSibling.classList.add('focus')
       // console.log(event.currentTarget.nextElementSibling.nextElementSibling);
     })
+  })
+
+  // для главного инпута (поиска)
+  const headerInput = document.querySelector('.header__bottom-input-elem');
+
+  headerInput.addEventListener('input',() => {
+    if (headerInput.value !== '') {
+      document.querySelector('.header__bottom-input-svg-placeholder').classList.add('active');
+    }
+    else {
+      document.querySelector('.header__bottom-input-svg-placeholder').classList.remove('active');
+    }
   })
 
 
@@ -62,4 +76,13 @@ document.addEventListener('DOMContentLoaded', function(){
 
   /* -------------------------- */
   const modal = new GraphModal();
+
+
+  tippy('#feedbackFormTooltip', {
+    content: 'Реплицированные с зарубежных источников, исследования формируют глобальную сеть.',
+    animation: 'fade',
+    maxWidth: 157,
+    interactive: true,
+  });
+
 });

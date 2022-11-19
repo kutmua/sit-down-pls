@@ -26,4 +26,56 @@
     line-height: 19px;
     color: $grey_color_shade;
   }
+  .feedback-form__tooltip-btn {
+    position: relative;
+    top: -5px;
+    width: 14px;
+    height: 14px;
+    svg {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: inherit;
+      height: inherit;
+    }
+    .feedback-form__svg-1,
+    .feedback-form__svg-2 {
+      transition: opacity .2s linear, visibility .2s linear;
+    }
+    .feedback-form__svg-2 {
+      opacity: 0;
+      visibility: hidden;
+    }
+    &:hover .feedback-form__svg-1 {
+      opacity: 0;
+      visibility: hidden;
+    }
+    &:hover .feedback-form__svg-2 {
+      opacity: 1;
+      visibility: visible;
+    }
+    &:focus-visible .feedback-form__svg-1 {
+      opacity: 0;
+      visibility: hidden;
+    }
+    &:focus-visible .feedback-form__svg-2 {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  .tippy-box {
+    background-color: $black;
+    border-radius: 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 9px;
+    line-height: 14px;
+    text-align: center;
+    color: $white_color;
+    .tippy-content {
+      padding: 5px;
+    }
+  }
 }

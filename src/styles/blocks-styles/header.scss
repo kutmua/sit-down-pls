@@ -105,6 +105,9 @@
               width: calc(100% + 4px);
               border: 2px solid $grey_color_light;
               border-radius: 0;
+              .choices__item {
+                transition: color .2s linear;
+              }
             }
             .choices__list--dropdown .choices__item, .choices__list[aria-expanded] .choices__item {
               position: relative;
@@ -114,6 +117,10 @@
               font-size: 14px;
               line-height: 130%;
               color: $black;
+            }
+            .choices__list--dropdown .choices__item--selectable.is-highlighted, .choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
+              background-color: transparent;
+              color: $primary_color;
             }
           }
         }
@@ -231,9 +238,7 @@
         }
         &:focus-visible {
           border-color: $primary_color;
-        }
-        &:active {
-
+          background: $pink_color_light
         }
       }
       .header__bottom-input-btn {
@@ -246,6 +251,31 @@
         svg {
           width: inherit;
           height: inherit;
+          transition: fill .2s linear;
+          & circle,
+          & path {
+            transition: stroke .2s linear, fill .2s linear;
+          }
+        }
+        &:hover svg path {
+          stroke: $white_color;
+        }
+        &:hover svg circle {
+          fill: $primary_color;
+        }
+        &:focus-visible svg path {
+          stroke: $white_color;
+        }
+        &:focus-visible svg circle {
+          fill: $primary_color_light;
+          stroke: $primary_color;
+        }
+        &:active svg path {
+          stroke: $white_color;
+        }
+        &:active svg circle {
+          fill: $primary_color_shade;
+          stroke: $primary_color_shade;
         }
       }
       .header__bottom-input-svg-placeholder {
@@ -255,6 +285,12 @@
         left: 34px;
         width: 16px;
         height: 16px;
+        & path {
+          transition: fill .2s linear;
+        }
+        &.active path {
+          fill: $primary_color;
+        }
       }
     }
 
@@ -339,7 +375,7 @@
         z-index: 10;
         .choices__item.choices__item--choice.choices__item--selectable.is-highlighted {
           background-color: transparent;
-          color: #7033AC;
+          color: $primary_color;
         }
       }
     }
